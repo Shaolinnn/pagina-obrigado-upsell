@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sua Vaga está Confirmada!</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- TEMA E VARIÁVEIS GLOBAIS --- */
+        :root {
+            --cor-primaria: #FF7A00;
+            --cor-primaria-clara: #FF9933;
+            --cor-secundaria: #2ECC71;
+            --cor-secundaria-hover: #27AE60;
+            
+            --cor-fundo: #FFFFFF;
+            --cor-fundo-claro: #F9FAFB;
+            
+            --cor-dark-fundo: #111827; /* Fundo escuro premium */
+            --cor-dark-texto: #E5E7EB;
+            --cor-dark-headline: #FFFFFF;
+            --cor-dark-card: #1F2937;
+            
+            --cor-texto: #374151;
+            --cor-headline: #111827;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-fundo);
+            color: var(--cor-texto);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* --- ESTRUTURA E HELPERS --- */
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        h1 { font-size: 3rem; font-weight: 800; }
+        h2 { font-size: 2.6rem; font-weight: 800; margin-bottom: 20px; }
+        h3 { font-size: 1.4rem; margin-bottom: 10px; }
+        p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+        .subtitle {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        /* --- SEÇÕES ESCURAS (DARK MODE) --- */
+        .dark-section {
+            background-color: var(--cor-dark-fundo);
+        }
+        .dark-section h2, .dark-section h3 {
+            color: var(--cor-dark-headline);
+        }
+        .dark-section p {
+            color: var(--cor-dark-texto);
+        }
+        
+        /* --- HEADER --- */
+        .header {
+            background: linear-gradient(45deg, var(--cor-primaria), var(--cor-primaria-clara));
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        .header h1 {
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        .header i {
+            font-size: 2.5rem;
+        }
+
+        /* --- TRANSIÇÃO --- */
+        .highlight-v2 {
+            background: var(--cor-fundo-claro);
+            border: 1px solid #E5E7EB;
+            border-left: 4px solid var(--cor-primaria);
+            padding: 25px;
+            text-align: left;
+            border-radius: 12px;
+            max-width: 750px;
+            margin: 40px auto 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .highlight-v2 i {
+            font-size: 1.5rem;
+            color: var(--cor-primaria);
+        }
+
+        /* --- BENTO GRID DE BENEFÍCIOS --- */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-auto-rows: minmax(200px, auto);
+            gap: 25px;
+            margin-top: 60px;
+            text-align: left;
+        }
+        .bento-item {
+            background-color: var(--cor-dark-card);
+            border: 1px solid #374151;
+            padding: 30px;
+            border-radius: 20px;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .bento-item.text-center {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .bento-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--cor-primaria);
+        }
+        .bento-item .icon {
+            font-size: 1.8rem;
+            color: var(--cor-primaria);
+            margin-bottom: 15px;
+        }
+        .bento-item.col-span-2 { grid-column: span 2; }
+
+        /* --- COMO FUNCIONA --- */
+        .how-it-works-container-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 60px;
+            text-align: left;
+        }
+        .work-item-v2 {
+            background-color: var(--cor-fundo-claro);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #E5E7EB;
+        }
+        .work-item-v2 .step {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cor-primaria);
+        }
+        
+        /* --- CTA FINAL E OFERTA --- */
+        .cta-section {
+            background-color: var(--cor-dark-fundo); /* Mantém o fundo escuro da seção */
+            padding-bottom: 60px; /* Ajuste o padding inferior se necessário */
+        }
+        .offer-card {
+            background: white;
+            border: 1px solid #E5E7EB;
+            border-radius: 20px;
+            padding: 50px; /* Aumenta o padding interno para mais "respiro" */
+            max-width: 700px; /* Levemente menor para mais destaque */
+            margin: 0 auto; /* Centraliza o card */
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Sombra mais forte para efeito flutuante */
+            position: relative; /* Para posicionar o subtítulo de urgência */
+        }
+        .urgency-note {
+            background: #FFFBEB;
+            color: #92400E;
+            padding: 15px 25px; /* Ajusta o padding */
+            border-radius: 100px; /* Mais arredondado como um chip */
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            border: 1px solid #FCD34D; /* Borda sutil */
+        }
+        .urgency-note i {
+            color: #FBBF24; /* Ícone com cor da notificação */
+        }
+        .offer-card h2 {
+            font-size: 2.2rem; /* Levemente menor para hierarquia */
+            margin-bottom: 15px;
+            color: var(--cor-headline); /* Garante que o H2 do card seja escuro */
+        }
+        .offer-card p {
+            font-size: 1.05rem; /* Ajusta o tamanho da fonte */
+            margin-bottom: 25px; /* Mais espaço para o preço */
+            color: var(--cor-texto); /* Garante cor de texto padrão */
+        }
+        .investment-label {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cor-texto);
+            margin-bottom: 10px;
+            display: block; /* Garante que o label ocupe sua própria linha */
+        }
+        .price-display {
+            display: flex;
+            align-items: baseline; /* Alinha os preços pela base */
+            justify-content: center;
+            margin: 20px 0 35px; /* Mais espaço abaixo do preço */
+        }
+        .old-price {
+            font-size: 1.4rem;
+            text-decoration: line-through;
+            color: #9CA3AF;
+            margin-right: 15px; /* Espaço entre o preço antigo e o novo */
+        }
+        .new-price {
+            font-size: 4.5rem; /* Torna o novo preço MUITO mais visível */
+            line-height: 1;
+            font-weight: 800;
+            color: var(--cor-headline);
+        }
+        .new-price span {
+            font-size: 2.5rem; /* Ajuste o "por R$" */
+            font-weight: 600;
+            margin-right: 5px;
+        }
+        
+        .cta-button-v2 {
+            display: inline-block;
+            background: linear-gradient(45deg, var(--cor-secundaria), #29b463);
+            color: white;
+            padding: 22px 60px; /* Aumenta o padding do botão */
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.4rem; /* Botão com fonte maior */
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 25px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4); /* Sombra do botão mais forte */
+            border: none;
+        }
+        .cta-button-v2:hover {
+            transform: translateY(-5px) scale(1.03); /* Efeito menor no scale para não exagerar */
+            box-shadow: 0 15px 30px rgba(39, 174, 96, 0.5);
+        }
+        .small-text-info {
+            font-size: 0.95rem;
+            margin-top: 20px; /* Ajuste o espaçamento */
+            color: #6B7280;
+        }
+        
+        /* --- RODAPÉ --- */
+        footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; }
+        footer p { font-size: 0.9rem; max-width: 100%; }
+        footer strong { color: white; }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 2rem; }
+            section { padding: 80px 0; }
+            .bento-grid, .how-it-works-container-v2 {
+                grid-template-columns: 1fr;
+            }
+            .bento-item.col-span-2 { grid-column: span 1; }
+            .offer-card { padding: 30px; max-width: 90%; } /* Ajusta padding e largura do card */
+            .new-price { font-size: 3.5rem; } /* Reduz o tamanho da fonte do preço em mobile */
+            .new-price span { font-size: 2rem; }
+            .cta-button-v2 { font-size: 1.1rem; padding: 18px 40px; } /* Ajusta botão */
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1><i class="fa-solid fa-circle-check"></i> Vaga Confirmada!</h1>
+            <p>Seja muito bem-vindo(a) ao DAQ Essencial.</p>
+        </div>
+    </header>
+    
+    <section>
+        <div class="container">
+            <h2>Seu acesso está a caminho.</h2>
+            <p>Enviamos para o seu e-mail todas as instruções para acessar o curso. Enquanto isso, preparamos algo especial para você aqui.</p>
+            <div class="highlight-v2">
+                <i class="fa-solid fa-star"></i>
+                <p><strong>Atenção:</strong> Você deu o passo mais importante, mas a jornada até a aprovação pode ser acelerada. O que vou te apresentar abaixo é uma oportunidade única, disponível <strong>apenas nesta página.</strong></p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="dark-section">
+        <div class="container">
+            <p class="subtitle">O Caminho Mais Rápido</p>
+            <h2>Acelere sua Aprovação com Acompanhamento Direto</h2>
+            <p>O método você já tem. Agora, imagine ter um plano de voo 100% personalizado e a minha orientação direta para garantir que cada minuto de estudo te deixe mais perto do seu nome no Diário Oficial.</p>
+            
+            <div class="bento-grid">
+                <div class="bento-item">
+                    <div class="icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <h3>Clareza Absoluta</h3>
+                    <p>Receba um plano de estudos lapidado para o seu ritmo e nunca mais se pergunte se está estudando certo.</p>
+                </div>
+                <div class="bento-item">
+                    <div class="icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Reprogramação Mental</h3>
+                    <p>Mude a forma como seu cérebro responde à prova, controlando a ansiedade e aumentando o foco.</p>
+                </div>
+                <div class="bento-item col-span-2 text-center">
+                    <div class="icon"><i class="fa-solid fa-user-check"></i></div>
+                    <h3>Acesso Direto à Minha Orientação</h3>
+                    <p>Não são dicas genéricas. É sobre caminhar comigo, passo a passo, com suporte contínuo para você nunca mais travar ou se sentir sozinho na jornada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <p class="subtitle">Como Funciona</p>
+            <h2>A Mentoria na Prática</h2>
+            <p style="margin-bottom: 60px;">Veja como vamos transformar seu estudo em uma máquina de aprovação, passo a passo.</p>
+            <div class="how-it-works-container-v2">
+                <div class="work-item-v2">
+                    <p class="step">PASSO 1</p>
+                    <h3>Encontro Individual e Estratégico</h3>
+                    <p>Teremos uma sessão individual ao vivo para montar seu plano de ação 100% personalizado, focado no seu concurso e na sua rotina.</p>
+                </div>
+                <div class="work-item-v2">
+                    <p class="step">PASSO 2</p>
+                    <h3>Ajustes Quinzenais em Grupo</h3>
+                    <p>A cada 15 dias, nos reunimos em grupo para acompanhar seu progresso, ajustar a rota e você aprender com a evolução de todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta-section">
+        <div class="container">
+            <div class="offer-card">
+                <div class="urgency-note">
+                    <i class="fa-solid fa-bell"></i> <span>Esta é uma oferta única e exclusiva para novos alunos.</span>
+                </div>
+                <h2>Acelere sua Aprovação com a Mentoria SPQ</h2>
+                <p>Essa é a sua única chance de ter meu acompanhamento de perto. Se você fechar esta página, esta condição especial não estará mais disponível.</p>
+                
+                <span class="investment-label">Investimento Único:</span>
+                <div class="price-display">
+                    <span class="old-price">De R$ 1.497</span>
+                    <span class="new-price"><span>por</span> R$ 500</span>
+                </div>
+                
+                <a href="#" class="cta-button-v2">GARANTIR MINHA VAGA NA MENTORIA</a>
+                <p class="small-text-info">Acesso imediato. Vagas limitadas e com acompanhamento direto.</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>© 2025 DAQ Essencial. Todos os direitos reservados.</p>
+            <p style="margin-top: 10px;">
+                <strong>Kyrlla Pattyelly</strong> – Auditora Fiscal • Criadora do SPQ • Mentora de milhares de alunos
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
