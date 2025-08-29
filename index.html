@@ -13,6 +13,8 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+
+
     <style>
         /* --- TEMA E VARIÁVEIS GLOBAIS --- */
         :root {
@@ -101,6 +103,7 @@
             align-items: center;
             justify-content: center;
             gap: 15px;
+            text-align: center;
         }
         .header i {
             font-size: 2.5rem;
@@ -181,71 +184,71 @@
         
         /* --- CTA FINAL E OFERTA --- */
         .cta-section {
-            background-color: var(--cor-dark-fundo); /* Mantém o fundo escuro da seção */
-            padding-bottom: 60px; /* Ajuste o padding inferior se necessário */
+            background-color: var(--cor-dark-fundo);
+            padding-bottom: 60px;
         }
         .offer-card {
             background: white;
             border: 1px solid #E5E7EB;
             border-radius: 20px;
-            padding: 50px; /* Aumenta o padding interno para mais "respiro" */
-            max-width: 700px; /* Levemente menor para mais destaque */
-            margin: 0 auto; /* Centraliza o card */
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3); /* Sombra mais forte para efeito flutuante */
-            position: relative; /* Para posicionar o subtítulo de urgência */
+            padding: 50px;
+            max-width: 700px;
+            margin: 0 auto;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            position: relative;
         }
         .urgency-note {
             background: #FFFBEB;
             color: #92400E;
-            padding: 15px 25px; /* Ajusta o padding */
-            border-radius: 100px; /* Mais arredondado como um chip */
+            padding: 15px 25px;
+            border-radius: 100px;
             font-weight: 600;
             display: inline-flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 30px;
-            border: 1px solid #FCD34D; /* Borda sutil */
+            border: 1px solid #FCD34D;
         }
         .urgency-note i {
-            color: #FBBF24; /* Ícone com cor da notificação */
+            color: #FBBF24;
         }
         .offer-card h2 {
-            font-size: 2.2rem; /* Levemente menor para hierarquia */
+            font-size: 2.2rem;
             margin-bottom: 15px;
-            color: var(--cor-headline); /* Garante que o H2 do card seja escuro */
+            color: var(--cor-headline);
         }
         .offer-card p {
-            font-size: 1.05rem; /* Ajusta o tamanho da fonte */
-            margin-bottom: 25px; /* Mais espaço para o preço */
-            color: var(--cor-texto); /* Garante cor de texto padrão */
+            font-size: 1.05rem;
+            margin-bottom: 25px;
+            color: var(--cor-texto);
         }
         .investment-label {
             font-size: 1.2rem;
             font-weight: 600;
             color: var(--cor-texto);
             margin-bottom: 10px;
-            display: block; /* Garante que o label ocupe sua própria linha */
+            display: block;
         }
         .price-display {
             display: flex;
-            align-items: baseline; /* Alinha os preços pela base */
+            align-items: baseline;
             justify-content: center;
-            margin: 20px 0 35px; /* Mais espaço abaixo do preço */
+            margin: 20px 0 35px;
         }
         .old-price {
             font-size: 1.4rem;
             text-decoration: line-through;
             color: #9CA3AF;
-            margin-right: 15px; /* Espaço entre o preço antigo e o novo */
+            margin-right: 15px;
         }
         .new-price {
-            font-size: 4.5rem; /* Torna o novo preço MUITO mais visível */
+            font-size: 4.5rem;
             line-height: 1;
             font-weight: 800;
             color: var(--cor-headline);
         }
         .new-price span {
-            font-size: 2.5rem; /* Ajuste o "por R$" */
+            font-size: 2.5rem;
             font-weight: 600;
             margin-right: 5px;
         }
@@ -254,25 +257,25 @@
             display: inline-block;
             background: linear-gradient(45deg, var(--cor-secundaria), #29b463);
             color: white;
-            padding: 22px 60px; /* Aumenta o padding do botão */
+            padding: 22px 60px;
             border-radius: 100px;
             text-decoration: none;
             font-weight: 700;
-            font-size: 1.4rem; /* Botão com fonte maior */
+            font-size: 1.4rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-top: 25px;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4); /* Sombra do botão mais forte */
+            box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4);
             border: none;
         }
         .cta-button-v2:hover {
-            transform: translateY(-5px) scale(1.03); /* Efeito menor no scale para não exagerar */
+            transform: translateY(-5px) scale(1.03);
             box-shadow: 0 15px 30px rgba(39, 174, 96, 0.5);
         }
         .small-text-info {
             font-size: 0.95rem;
-            margin-top: 20px; /* Ajuste o espaçamento */
+            margin-top: 20px;
             color: #6B7280;
         }
         
@@ -283,17 +286,39 @@
 
         /* --- RESPONSIVIDADE --- */
         @media (max-width: 768px) {
-            h1 { font-size: 2.2rem; }
-            h2 { font-size: 2rem; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
             section { padding: 80px 0; }
             .bento-grid, .how-it-works-container-v2 {
                 grid-template-columns: 1fr;
             }
             .bento-item.col-span-2 { grid-column: span 1; }
-            .offer-card { padding: 30px; max-width: 90%; } /* Ajusta padding e largura do card */
-            .new-price { font-size: 3.5rem; } /* Reduz o tamanho da fonte do preço em mobile */
+
+            /* Ajustes específicos para o Header em Mobile */
+            .header h1 {
+                font-size: 2rem;
+                flex-direction: column;
+                gap: 5px;
+            }
+            .header i {
+                font-size: 2rem;
+            }
+            .header p {
+                font-size: 1rem;
+            }
+
+            /* Ajustes específicos para o CTA Final em Mobile */
+            .offer-card {
+                padding: 30px 20px;
+                max-width: 95%;
+            }
+            .new-price { font-size: 3.5rem; }
             .new-price span { font-size: 2rem; }
-            .cta-button-v2 { font-size: 1.1rem; padding: 18px 40px; } /* Ajusta botão */
+            .cta-button-v2 { font-size: 1.1rem; padding: 18px 35px; }
+            .urgency-note {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
