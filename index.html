@@ -13,8 +13,6 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-
-
     <style>
         /* --- TEMA E VARIÁVEIS GLOBAIS --- */
         :root {
@@ -91,8 +89,9 @@
         }
         
         /* --- HEADER --- */
+        /* MUDANÇA 1: Cor do Header alterada para verde */
         .header {
-            background: linear-gradient(45deg, var(--cor-primaria), var(--cor-primaria-clara));
+            background: linear-gradient(45deg, var(--cor-secundaria), var(--cor-secundaria-hover));
             color: white;
             padding: 4rem 0;
             text-align: center;
@@ -129,6 +128,15 @@
             color: var(--cor-primaria);
         }
 
+        /* MUDANÇA 2: Estilo para o novo título "MENTORIA SPQ" */
+        .section-main-title {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--cor-dark-headline);
+            margin-bottom: 30px;
+            line-height: 1.2;
+        }
+        
         /* --- BENTO GRID DE BENEFÍCIOS --- */
         .bento-grid {
             display: grid;
@@ -212,10 +220,13 @@
         .urgency-note i {
             color: #FBBF24;
         }
+        /* MUDANÇA 3: Estilo para o novo H2 "ESSA É SUA ÚLTIMA CHANCE" */
         .offer-card h2 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
+            text-transform: uppercase;
             margin-bottom: 15px;
             color: var(--cor-headline);
+            line-height: 1.2;
         }
         .offer-card p {
             font-size: 1.05rem;
@@ -233,7 +244,7 @@
             display: flex;
             align-items: baseline;
             justify-content: center;
-            margin: 20px 0 35px;
+            margin: 20px 0 10px; /* Reduz a margem inferior para acomodar o parcelamento */
         }
         .old-price {
             font-size: 1.4rem;
@@ -251,6 +262,13 @@
             font-size: 2.5rem;
             font-weight: 600;
             margin-right: 5px;
+        }
+        /* MUDANÇA 3: Estilo para o novo preço parcelado */
+        .installment-price {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--cor-texto);
+            margin-bottom: 35px;
         }
         
         .cta-button-v2 {
@@ -288,6 +306,9 @@
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.8rem; }
+            .section-main-title { font-size: 2.5rem; } /* Ajuste do título MENTORIA SPQ no mobile */
+            .offer-card h2 { font-size: 2.2rem; } /* Ajuste do H2 da oferta no mobile */
+
             section { padding: 80px 0; }
             .bento-grid, .how-it-works-container-v2 {
                 grid-template-columns: 1fr;
@@ -314,6 +335,7 @@
             }
             .new-price { font-size: 3.5rem; }
             .new-price span { font-size: 2rem; }
+            .installment-price { font-size: 1.1rem; }
             .cta-button-v2 { font-size: 1.1rem; padding: 18px 35px; }
             .urgency-note {
                 padding: 10px 15px;
@@ -344,6 +366,8 @@
     
     <section class="dark-section">
         <div class="container">
+            <h2 class="section-main-title">MENTORIA SPQ</h2>
+
             <p class="subtitle">O Caminho Mais Rápido</p>
             <h2>Acelere sua Aprovação com Acompanhamento Direto</h2>
             <p>O método você já tem. Agora, imagine ter um plano de voo 100% personalizado e a minha orientação direta para garantir que cada minuto de estudo te deixe mais perto do seu nome no Diário Oficial.</p>
@@ -394,16 +418,17 @@
                 <div class="urgency-note">
                     <i class="fa-solid fa-bell"></i> <span>Esta é uma oferta única e exclusiva para novos alunos.</span>
                 </div>
-                <h2>Acelere sua Aprovação com a Mentoria SPQ</h2>
-                <p>Essa é a sua única chance de ter meu acompanhamento de perto. Se você fechar esta página, esta condição especial não estará mais disponível.</p>
+                <h2>ESSA É SUA ÚLTIMA CHANCE.</h2>
+                <p>Acelere sua aprovação com a Mentoria SPQ. Se você fechar esta página, esta condição especial não estará mais disponível.</p>
                 
                 <span class="investment-label">Investimento Único:</span>
                 <div class="price-display">
                     <span class="old-price">De R$ 1.497</span>
                     <span class="new-price"><span>por</span> R$ 500</span>
                 </div>
+                <p class="installment-price">ou 12x de R$ 51,71</p>
                 
-                <a href="#" class="cta-button-v2">GARANTIR MINHA VAGA NA MENTORIA</a>
+                <a href="https://pay.hotmart.com/M101018827X?off=pdt135ma" target="_blank" rel="noopener noreferrer" class="cta-button-v2">GARANTIR MINHA VAGA NA MENTORIA</a>
                 <p class="small-text-info">Acesso imediato. Vagas limitadas e com acompanhamento direto.</p>
             </div>
         </div>
