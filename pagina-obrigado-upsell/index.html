@@ -13,6 +13,27 @@
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-583505601"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-583505601', { transport_type: 'beacon' });
+    </script>
+
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '575682733921732');
+        fbq('track', 'PageView');
+    </script>
+    
     <style>
         /* --- TEMA E VARIÁVEIS GLOBAIS --- */
         :root {
@@ -89,7 +110,6 @@
         }
         
         /* --- HEADER --- */
-        /* MUDANÇA 1: Cor do Header alterada para verde */
         .header {
             background: linear-gradient(45deg, var(--cor-secundaria), var(--cor-secundaria-hover));
             color: white;
@@ -128,7 +148,6 @@
             color: var(--cor-primaria);
         }
 
-        /* MUDANÇA 2: Estilo para o novo título "MENTORIA SPQ" */
         .section-main-title {
             font-size: 3.5rem;
             font-weight: 800;
@@ -220,7 +239,6 @@
         .urgency-note i {
             color: #FBBF24;
         }
-        /* MUDANÇA 3: Estilo para o novo H2 "ESSA É SUA ÚLTIMA CHANCE" */
         .offer-card h2 {
             font-size: 2.8rem;
             text-transform: uppercase;
@@ -244,7 +262,7 @@
             display: flex;
             align-items: baseline;
             justify-content: center;
-            margin: 20px 0 10px; /* Reduz a margem inferior para acomodar o parcelamento */
+            margin: 20px 0 10px;
         }
         .old-price {
             font-size: 1.4rem;
@@ -263,7 +281,6 @@
             font-weight: 600;
             margin-right: 5px;
         }
-        /* MUDANÇA 3: Estilo para o novo preço parcelado */
         .installment-price {
             font-size: 1.2rem;
             font-weight: 600;
@@ -306,8 +323,8 @@
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
             h2 { font-size: 1.8rem; }
-            .section-main-title { font-size: 2.5rem; } /* Ajuste do título MENTORIA SPQ no mobile */
-            .offer-card h2 { font-size: 2.2rem; } /* Ajuste do H2 da oferta no mobile */
+            .section-main-title { font-size: 2.5rem; }
+            .offer-card h2 { font-size: 2.2rem; }
 
             section { padding: 80px 0; }
             .bento-grid, .how-it-works-container-v2 {
@@ -315,7 +332,6 @@
             }
             .bento-item.col-span-2 { grid-column: span 1; }
 
-            /* Ajustes específicos para o Header em Mobile */
             .header h1 {
                 font-size: 2rem;
                 flex-direction: column;
@@ -328,7 +344,6 @@
                 font-size: 1rem;
             }
 
-            /* Ajustes específicos para o CTA Final em Mobile */
             .offer-card {
                 padding: 30px 20px;
                 max-width: 95%;
@@ -345,6 +360,11 @@
     </style>
 </head>
 <body>
+    
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=575682733921732&ev=PageView&noscript=1" />
+    </noscript>
 
     <header class="header">
         <div class="container">
@@ -442,6 +462,16 @@
             </p>
         </div>
     </footer>
+    
+    <script id="hotmart-pixel" src="https://launcher.hotmart.com/launcher.js" async></script>
+    <script>
+        (function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
+        (l[c].q=l[c].q||[]).push(arguments)},l[c].l=1*new Date();h=a.createElement(u),
+        e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
+        })(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
+
+        hot('account','724d6454-843f-36de-9666-c2bc235cd7be');
+    </script>
 
 </body>
 </html>
