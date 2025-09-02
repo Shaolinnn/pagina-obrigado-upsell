@@ -9,7 +9,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -66,11 +66,19 @@
         .bento-item .icon { font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 15px; } .bento-item.col-span-2 { grid-column: span 2; }
         .cta-section { background-color: var(--cor-dark-fundo); padding-bottom: 60px; }
         .offer-card { background: white; border-radius: 20px; padding: 50px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-        .decline-link { display: block; margin-top: 30px; color: #a0aec0; text-decoration: underline; font-weight: 500; }
-        .decline-link:hover { color: white; }
+        .offer-card h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; color: var(--cor-headline); line-height: 1.2; }
+        .price-display { display: flex; align-items: baseline; justify-content: center; margin: 20px 0 10px; }
+        .old-price { font-size: 1.4rem; text-decoration: line-through; color: #9CA3AF; margin-right: 15px; }
+        .new-price { font-size: 4.5rem; line-height: 1; font-weight: 800; color: var(--cor-headline); }
+        .installment-price { font-size: 1.2rem; font-weight: 600; color: var(--cor-texto); margin-bottom: 35px; }
+        .button-container { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px; }
+        .cta-button { border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; padding: 22px 40px; text-align: center; transition: all 0.3s ease; display: block; width: 100%; max-width: 450px; }
+        .cta-button.primary { background: linear-gradient(45deg, var(--cor-secundaria), #29b463); color: white; border: none; box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4); }
+        .cta-button.primary:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 15px 30px rgba(39, 174, 96, 0.5); }
+        .cta-button.secondary { background-color: transparent; color: var(--cor-texto); font-size: 1rem; text-transform: none; text-decoration: underline; padding: 10px; }
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; }
         @media (max-width: 768px) {
-            h1, .header h1 { font-size: 2rem; } .section-main-title { font-size: 2.5rem; }
+            h1, .header h1 { font-size: 2rem; } .section-main-title { font-size: 2.5rem; } .offer-card h2 { font-size: 2.2rem; }
             section { padding: 80px 0; }
             .bento-grid { grid-template-columns: 1fr; } .bento-item.col-span-2 { grid-column: span 1; }
             .header h1 { flex-direction: column; gap: 5px; } .header i { font-size: 2rem; }
@@ -78,6 +86,9 @@
             .profile-photo { width: 150px; height: 150px; }
             .profile-text-content h2, .profile-text-content p { text-align: center; }
             .offer-card { padding: 30px 20px; max-width: 95%; }
+            .new-price { font-size: 3.5rem; }
+            .cta-button { font-size: 1.1rem; padding: 18px 35px; }
+            .cta-button.secondary { font-size: 0.9rem; }
         }
     </style>
 </head>
@@ -107,36 +118,28 @@
             <p class="subtitle">O Caminho Mais Rápido</p>
             <h2>Acelere sua Aprovação com Acompanhamento Direto</h2>
             <p>O método você já tem. Agora, imagine ter um plano de voo 100% personalizado e a minha orientação direta para garantir que cada minuto de estudo te deixe mais perto do seu nome no Diário Oficial.</p>
-            
             <div class="bento-grid">
-                <div class="bento-item">
-                    <div class="icon"><i class="fa-solid fa-map-location-dot"></i></div>
-                    <h3>Clareza Absoluta</h3>
-                    <p>Receba um plano de estudos lapidado para o seu ritmo e nunca mais se pergunte se está estudando certo.</p>
-                </div>
-                <div class="bento-item">
-                    <div class="icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>Reprogramação Mental</h3>
-                    <p>Mude a forma como seu cérebro responde à prova, controlando a ansiedade e aumentando o foco.</p>
-                </div>
-                <div class="bento-item col-span-2 text-center">
-                    <div class="icon"><i class="fa-solid fa-user-check"></i></div>
-                    <h3>Acesso Direto à Minha Orientação</h3>
-                    <p>Não são dicas genéricas. É sobre caminhar comigo, passo a passo, com suporte contínuo para você nunca mais travar ou se sentir sozinho na jornada.</p>
-                </div>
+                <div class="bento-item"><div class="icon"><i class="fa-solid fa-map-location-dot"></i></div><h3>Clareza Absoluta</h3><p>Receba um plano de estudos lapidado para o seu ritmo e nunca mais se pergunte se está estudando certo.</p></div>
+                <div class="bento-item"><div class="icon"><i class="fa-solid fa-brain"></i></div><h3>Reprogramação Mental</h3><p>Mude a forma como seu cérebro responde à prova, controlando a ansiedade e aumentando o foco.</p></div>
+                <div class="bento-item col-span-2 text-center"><div class="icon"><i class="fa-solid fa-user-check"></i></div><h3>Acesso Direto à Minha Orientação</h3><p>Não são dicas genéricas. É sobre caminhar comigo, passo a passo, com suporte contínuo para você nunca mais travar ou se sentir sozinho na jornada.</p></div>
             </div>
         </div>
     </section>
     <section class="cta-section">
         <div class="container">
             <div class="offer-card">
-                <div id="hotmart-sales-funnel"></div>
-                <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
-                <script>
-                    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
-                </script>
+                <h2>ESSA É SUA ÚLTIMA CHANCE.</h2>
+                <p>Acelere sua aprovação com a Mentoria SPQ. Se você fechar esta página, esta condição especial não estará mais disponível.</p>
+                <div class="price-display">
+                    <span class="old-price">De R$ 1.497</span>
+                    <span class="new-price">R$ 500</span>
                 </div>
-            <a href="nao.html" class="decline-link"><u>Não, obrigado. Entendo que esta é uma oferta única e desejo prosseguir apenas com o DAQ Essencial.</u></a>
+                <p class="installment-price">ou 12x de R$ 51,71</p>
+                <div class="button-container">
+                    <a href="sim.html" class="cta-button primary">SIM, QUERO ACELERAR MINHA APROVAÇÃO</a>
+                    <a href="nao.html" class="cta-button secondary">Não, obrigado. Quero apenas o DAQ Essencial.</a>
+                </div>
+            </div>
         </div>
     </section>
     <footer>
