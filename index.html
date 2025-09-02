@@ -128,6 +128,40 @@
             font-size: 2.5rem;
         }
 
+        /* --- SEÇÃO DE BOAS-VINDAS COM IMAGEM --- */
+        .welcome-section-with-image {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        .profile-presentation {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            max-width: 750px;
+            width: 100%;
+            text-align: left;
+        }
+        .profile-photo {
+            width: 180px; /* MUDANÇA: Aumentado de 140px para 180px */
+            height: 180px; /* MUDANÇA: Aumentado de 140px para 180px */
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--cor-secundaria);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            flex-shrink: 0;
+        }
+        .profile-text-content h2 {
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        .profile-text-content p {
+            margin: 0;
+            text-align: left;
+        }
+
         /* --- TRANSIÇÃO --- */
         .highlight-v2 {
             background: var(--cor-fundo-claro);
@@ -137,7 +171,7 @@
             text-align: left;
             border-radius: 12px;
             max-width: 750px;
-            margin: 40px auto 0;
+            margin: 0 auto; /* Ajustado para centralizar */
             box-shadow: 0 4px 20px rgba(0,0,0,0.05);
             display: flex;
             align-items: center;
@@ -344,6 +378,22 @@
                 font-size: 1rem;
             }
 
+            .profile-presentation {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            .profile-photo {
+                width: 150px; /* MUDANÇA: Aumentado de 120px para 150px */
+                height: 150px; /* MUDANÇA: Aumentado de 120px para 150px */
+            }
+            .profile-text-content h2, .profile-text-content p {
+                text-align: center;
+            }
+            .profile-text-content p {
+                font-size: 1rem;
+            }
+
             .offer-card {
                 padding: 30px 20px;
                 max-width: 95%;
@@ -374,9 +424,14 @@
     </header>
     
     <section>
-        <div class="container">
-            <h2>Seu acesso está a caminho.</h2>
-            <p>Enviamos para o seu e-mail todas as instruções para acessar o curso. Enquanto isso, preparamos algo especial para você aqui.</p>
+        <div class="container welcome-section-with-image">
+            <div class="profile-presentation">
+                <img src="image/Kyrlla-2.webp" alt="Foto de Perfil da Kyrlla" class="profile-photo">
+                <div class="profile-text-content">
+                    <h2>Seu acesso está a caminho.</h2>
+                    <p>Enviamos para o seu e-mail todas as instruções para acessar o curso. Enquanto isso, eu, Kyrlla, preparei algo especial para você aqui.</p>
+                </div>
+            </div>
             <div class="highlight-v2">
                 <i class="fa-solid fa-star"></i>
                 <p><strong>Atenção:</strong> Você deu o passo mais importante, mas a jornada até a aprovação pode ser acelerada. O que vou te apresentar abaixo é uma oportunidade única, disponível <strong>apenas nesta página.</strong></p>
@@ -448,7 +503,7 @@
                 </div>
                 <p class="installment-price">ou 12x de R$ 51,71</p>
                 
-                <a href="https://pay.hotmart.com/M101018827X?off=pdt135ma" target="_blank" rel="noopener noreferrer" class="cta-button-v2">GARANTIR MINHA VAGA NA MENTORIA</a>
+                <a href="https://pay.hotmart.com/M101018827X?off=duglc44y" target="_blank" rel="noopener noreferrer" class="cta-button-v2">GARANTIR MINHA VAGA NA MENTORIA</a>
                 <p class="small-text-info">Acesso imediato. Vagas limitadas e com acompanhamento direto.</p>
             </div>
         </div>
