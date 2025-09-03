@@ -58,22 +58,32 @@
         .bento-item { background-color: var(--cor-dark-card); border: 1px solid #374151; padding: 30px; border-radius: 20px; }
         .bento-item.text-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
         .bento-item .icon { font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 15px; } .bento-item.col-span-2 { grid-column: span 2; }
+
+        /* ESTILOS RESTAURADOS PARA "COMO FUNCIONA" */
+        .how-it-works-container-v2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 60px;
+            text-align: left;
+        }
+        .work-item-v2 {
+            background-color: var(--cor-fundo-claro);
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid #E5E7EB;
+        }
+        .work-item-v2 .step {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--cor-primaria);
+        }
+
         .cta-section { background-color: var(--cor-dark-fundo); padding-bottom: 60px; }
         .offer-card { background: white; border-radius: 20px; padding: 50px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
-        .offer-card h2 { font-size: 2.8rem; text-transform: uppercase; margin-bottom: 15px; color: var(--cor-headline); line-height: 1.2; }
-        .price-display { display: flex; align-items: baseline; justify-content: center; margin: 20px 0 10px; }
-        .old-price { font-size: 1.4rem; text-decoration: line-through; color: #9CA3AF; margin-right: 15px; }
-        .new-price { font-size: 4.5rem; line-height: 1; font-weight: 800; color: var(--cor-headline); }
-        .installment-price { font-size: 1.2rem; font-weight: 600; color: var(--cor-texto); margin-bottom: 35px; }
-        .button-container { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 30px; }
-        .cta-button { border-radius: 100px; text-decoration: none; font-weight: 700; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 1px; padding: 22px 40px; text-align: center; transition: all 0.3s ease; display: block; width: 100%; max-width: 450px; }
-        .cta-button.primary { background: linear-gradient(45deg, var(--cor-secundaria), #29b463); color: white; border: none; box-shadow: 0 10px 25px rgba(46, 204, 113, 0.4); }
-        .cta-button.primary:hover { transform: translateY(-5px) scale(1.03); box-shadow: 0 15px 30px rgba(39, 174, 96, 0.5); }
-        .cta-button.secondary { background-color: transparent; color: #9CA3AF; font-size: 1rem; text-transform: none; text-decoration: underline; padding: 10px; font-weight: 500; }
-        .cta-button.secondary:hover { color: white; }
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; }
         @media (max-width: 768px) {
-            h1, .header h1 { font-size: 2rem; } .section-main-title { font-size: 2.5rem; } .offer-card h2 { font-size: 2.2rem; }
+            h1, .header h1 { font-size: 2rem; } .section-main-title { font-size: 2.5rem; }
             section { padding: 80px 0; }
             .bento-grid { grid-template-columns: 1fr; } .bento-item.col-span-2 { grid-column: span 1; }
             .header h1 { flex-direction: column; gap: 5px; } .header i { font-size: 2rem; }
@@ -81,17 +91,19 @@
             .profile-photo { width: 150px; height: 150px; }
             .profile-text-content h2, .profile-text-content p { text-align: center; }
             .offer-card { padding: 30px 20px; max-width: 95%; }
-            .new-price { font-size: 3.5rem; }
-            .cta-button { font-size: 1.1rem; padding: 18px 35px; }
-            .cta-button.secondary { font-size: 0.9rem; }
         }
     </style>
 </head>
 <body>
     <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=575682733921732&ev=PageView&noscript=1" /></noscript>
+
     <header class="header">
-        <div class="container"><h1><i class="fa-solid fa-circle-check"></i> Espere, sua compra ainda não acabou!</h1></div>
+        <div class="container">
+            <h1><i class="fa-solid fa-circle-check"></i> Vaga Confirmada!</h1>
+            <p>Seja muito bem-vindo(a) ao DAQ Essencial.</p>
+        </div>
     </header>
+
     <section>
         <div class="container">
             <div class="profile-presentation">
@@ -120,21 +132,36 @@
             </div>
         </div>
     </section>
+
+    <section>
+        <div class="container">
+            <p class="subtitle">Como Funciona</p>
+            <h2>A Mentoria na Prática</h2>
+            <p style="margin-bottom: 60px;">Veja como vamos transformar seu estudo em uma máquina de aprovação, passo a passo.</p>
+            <div class="how-it-works-container-v2">
+                <div class="work-item-v2">
+                    <p class="step">PASSO 1</p>
+                    <h3>Encontro Individual e Estratégico</h3>
+                    <p>Teremos uma sessão individual ao vivo para montar seu plano de ação 100% personalizado, focado no seu concurso e na sua rotina.</p>
+                </div>
+                <div class="work-item-v2">
+                    <p class="step">PASSO 2</p>
+                    <h3>Ajustes Quinzenais em Grupo</h3>
+                    <p>A cada 15 dias, nos reunimos em grupo para acompanhar seu progresso, ajustar a rota e você aprender com a evolução de todos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section class="cta-section">
         <div class="container">
             <div class="offer-card">
-                <h2>ESSA É SUA ÚLTIMA CHANCE.</h2>
-                <p>Acelere sua aprovação com a Mentoria SPQ. Se você fechar esta página, esta condição especial não estará mais disponível.</p>
-                <div class="price-display">
-                    <span class="old-price">De R$ 1.497</span>
-                    <span class="new-price">R$ 500</span>
+                <div id="hotmart-sales-funnel"></div>
+                <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+                <script>
+                    checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+                </script>
                 </div>
-                <p class="installment-price">ou 12x de R$ 51,71</p>
-                <div class="button-container">
-                    <a href="COLE AQUI SEU LINK 'ACEITAR OFERTA' DA HOTMART" class="cta-button primary">SIM, QUERO A MENTORIA COM 1 CLIQUE</a>
-                    <a href="COLE AQUI SEU LINK 'RECUSAR OFERTA' DA HOTMART" class="cta-button secondary">Não, obrigado. Quero apenas o DAQ Essencial.</a>
-                </div>
-            </div>
         </div>
     </section>
     <footer>
