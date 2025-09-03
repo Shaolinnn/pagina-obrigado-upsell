@@ -58,34 +58,17 @@
         .bento-item { background-color: var(--cor-dark-card); border: 1px solid #374151; padding: 30px; border-radius: 20px; }
         .bento-item.text-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
         .bento-item .icon { font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 15px; } .bento-item.col-span-2 { grid-column: span 2; }
-
-        /* ESTILOS RESTAURADOS PARA "COMO FUNCIONA" */
-        .how-it-works-container-v2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 60px;
-            text-align: left;
-        }
-        .work-item-v2 {
-            background-color: var(--cor-fundo-claro);
-            padding: 30px;
-            border-radius: 16px;
-            border: 1px solid #E5E7EB;
-        }
-        .work-item-v2 .step {
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--cor-primaria);
-        }
-
+        .how-it-works-container-v2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; text-align: left; }
+        .work-item-v2 { background-color: var(--cor-fundo-claro); padding: 30px; border-radius: 16px; border: 1px solid #E5E7EB; }
+        .work-item-v2 .step { font-size: 1rem; font-weight: 700; color: var(--cor-primaria); }
         .cta-section { background-color: var(--cor-dark-fundo); padding-bottom: 60px; }
         .offer-card { background: white; border-radius: 20px; padding: 50px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; }
         @media (max-width: 768px) {
             h1, .header h1 { font-size: 2rem; } .section-main-title { font-size: 2.5rem; }
             section { padding: 80px 0; }
-            .bento-grid { grid-template-columns: 1fr; } .bento-item.col-span-2 { grid-column: span 1; }
+            .bento-grid, .how-it-works-container-v2 { grid-template-columns: 1fr; }
+            .bento-item.col-span-2 { grid-column: span 1; }
             .header h1 { flex-direction: column; gap: 5px; } .header i { font-size: 2rem; }
             .profile-presentation { flex-direction: column; text-align: center; gap: 15px; }
             .profile-photo { width: 150px; height: 150px; }
@@ -119,6 +102,7 @@
             </div>
         </div>
     </section>
+
     <section class="dark-section">
         <div class="container">
             <h2 class="section-main-title">MENTORIA SPQ</h2>
@@ -164,6 +148,7 @@
                 </div>
         </div>
     </section>
+    
     <footer>
         <div class="container"><p>© 2025 DAQ Essencial. Todos os direitos reservados.</p><p style="margin-top: 10px;"><strong>Kyrlla Pattyelly</strong> – Auditora Fiscal • Criadora do SPQ</p></div>
     </footer>
