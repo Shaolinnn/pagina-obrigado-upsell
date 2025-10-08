@@ -58,22 +58,52 @@
         .bento-item { background-color: var(--cor-dark-card); border: 1px solid #374151; padding: 30px; border-radius: 20px; }
         .bento-item.text-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
         .bento-item .icon { font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 15px; } .bento-item.col-span-2 { grid-column: span 2; }
-        .how-it-works-container-v2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 60px; text-align: left; }
-        .work-item-v2 { background-color: var(--cor-fundo-claro); padding: 30px; border-radius: 16px; border: 1px solid #E5E7EB; }
-        .work-item-v2 .step { font-size: 1rem; font-weight: 700; color: var(--cor-primaria); }
+        
+        /* ESTILOS DA SEÇÃO DE PROVA SOCIAL (VÍDEOS COM ABAS) */
+        .video-proof-section { background-color: var(--cor-fundo-claro); }
+        .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 50px; flex-wrap: wrap; }
+        .tab-button { padding: 12px 25px; border: 2px solid #E5E7EB; background-color: white; border-radius: 100px; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: var(--cor-texto); cursor: pointer; transition: all 0.3s ease; }
+        .tab-button:hover { background-color: #F3F4F6; border-color: #D1D5DB; }
+        .tab-button.active { background-color: var(--cor-secundaria); border-color: var(--cor-secundaria); color: white; box-shadow: 0 4px 15px rgba(46, 204, 113, 0.3); }
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; animation: fadeIn 0.5s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .video-proof-grid { display: grid; gap: 30px; }
+        
+        /* MUDANÇA: Unificando os grids para 2 colunas */
+        .video-proof-grid.grid-2,
+        .video-proof-grid.grid-3 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .video-card { background-color: white; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.07); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .video-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
+        .video-facade { position: relative; cursor: pointer; aspect-ratio: 16 / 9; background-size: cover; background-position: center; }
+        .video-facade::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.2); transition: background 0.3s ease; }
+        .video-card:hover .video-facade::before { background: rgba(0,0,0,0.4); }
+        .play-button { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(1); width: 70px; height: 70px; background-color: rgba(255,255,255,0.9); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 24px; color: var(--cor-secundaria); transition: transform 0.3s ease; box-shadow: 0 0 20px rgba(0,0,0,0.3); }
+        .video-card:hover .play-button { transform: translate(-50%, -50%) scale(1.1); }
+        .video-quote { padding: 20px; font-size: 1rem; font-weight: 500; text-align: center; line-height: 1.6; color: var(--cor-texto); }
+        .video-facade iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
+        
         .cta-section { background-color: var(--cor-dark-fundo); padding-bottom: 60px; }
         .offer-card { background: white; border-radius: 20px; padding: 50px; max-width: 700px; margin: 0 auto; box-shadow: 0 20px 50px rgba(0,0,0,0.3); }
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; }
+        
+        @media (max-width: 900px) {
+            .video-proof-grid.grid-2, .video-proof-grid.grid-3 { grid-template-columns: 1fr; }
+        }
         @media (max-width: 768px) {
             h1, .header h1 { font-size: 2rem; } .section-main-title { font-size: 2.5rem; }
             section { padding: 80px 0; }
-            .bento-grid, .how-it-works-container-v2 { grid-template-columns: 1fr; }
+            .bento-grid { grid-template-columns: 1fr; }
             .bento-item.col-span-2 { grid-column: span 1; }
             .header h1 { flex-direction: column; gap: 5px; } .header i { font-size: 2rem; }
             .profile-presentation { flex-direction: column; text-align: center; gap: 15px; }
             .profile-photo { width: 150px; height: 150px; }
             .profile-text-content h2, .profile-text-content p { text-align: center; }
             .offer-card { padding: 30px 20px; max-width: 95%; }
+            .tabs { flex-direction: column; gap: 15px; }
         }
     </style>
 </head>
@@ -82,8 +112,7 @@
 
     <header class="header">
         <div class="container">
-            <h1><i class="fa-solid fa-circle-check"></i> Vaga Confirmada!</h1>
-            <p>Seja muito bem-vindo(a) ao DAQ Essencial.</p>
+            <h1><i class="fa-solid fa-circle-check"></i> Espere, sua compra ainda não acabou!</h1>
         </div>
     </header>
 
@@ -117,21 +146,74 @@
         </div>
     </section>
 
-    <section>
+    <section class="video-proof-section">
         <div class="container">
-            <p class="subtitle">Como Funciona</p>
-            <h2>A Mentoria na Prática</h2>
-            <p style="margin-bottom: 60px;">Veja como vamos transformar seu estudo em uma máquina de aprovação, passo a passo.</p>
-            <div class="how-it-works-container-v2">
-                <div class="work-item-v2">
-                    <p class="step">PASSO 1</p>
-                    <h3>Encontro Individual e Estratégico</h3>
-                    <p>Teremos uma sessão individual ao vivo para montar seu plano de ação 100% personalizado, focado no seu concurso e na sua rotina.</p>
+            <p class="subtitle">A Mentoria por Dentro</p>
+            <h2>Isto é o Que Acontece na Mentoria SPQ</h2>
+            <p style="margin-bottom: 40px;">Selecionamos trechos reais de sessões para você ver como a Kyrlla identifica travas e constrói atalhos para a aprovação. <strong>Escolha o perfil que mais se parece com você:</strong></p>
+
+            <div class="tabs">
+                <button class="tab-button active" data-tab="tab-1">Estou Começando e Desconfiado</button>
+                <button class="tab-button" data-tab="tab-2">Já Estudo, Mas Sinto que Travei</button>
+                <button class="tab-button" data-tab="tab-3">Quero Ver a Estrategista em Ação</button>
+            </div>
+
+            <div class="tab-content">
+                <div class="tab-panel active" id="tab-1">
+                    <div class="video-proof-grid grid-2">
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="ZHc-xzqdWZQ" style="background-image: url('https://img.youtube.com/vi/ZHc-xzqdWZQ/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Xinguei você de tudo quanto foi nome: 'Essa mulher é doida!'"</p>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="LH8jX8Q8eC4" style="background-image: url('https://img.youtube.com/vi/LH8jX8Q8eC4/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Fiz a prova da PF e tomei fumo. Percebi que só vídeo-aula não adiantava."</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="work-item-v2">
-                    <p class="step">PASSO 2</p>
-                    <h3>Ajustes Quinzenais em Grupo</h3>
-                    <p>A cada 15 dias, nos reunimos em grupo para acompanhar seu progresso, ajustar a rota e você aprender com a evolução de todos.</p>
+
+                <div class="tab-panel" id="tab-2">
+                    <div class="video-proof-grid grid-3">
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="LH8jX8Q8eC4" style="background-image: url('https://img.youtube.com/vi/LH8jX8Q8eC4/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Sua nota é alta, mas sua mente não é treinada para pensar rápido."</p>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="uZTG9cUZg-U" style="background-image: url('https://img.youtube.com/vi/uZTG9cUZg-U/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Para você, a estratégia é diferente: Pulando fases do método."</p>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="lbRGnV-Tv6g" style="background-image: url('https://img.youtube.com/vi/lbRGnV-Tv6g/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Você está fazendo 26 questões por dia. Para sua porcentagem, é extremamente baixo."</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tab-panel" id="tab-3">
+                    <div class="video-proof-grid grid-2">
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="75h8-KQ6jfY" style="background-image: url('https://img.youtube.com/vi/75h8-KQ6jfY/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Daqui pra frente, são 30 cadernos de uma vez. Seu percentual vai despencar, mas é intencional."</p>
+                        </div>
+                        <div class="video-card">
+                            <div class="video-facade" data-youtube-id="fOZuruO23MA" style="background-image: url('https://img.youtube.com/vi/fOZuruO23MA/hqdefault.jpg');">
+                                <div class="play-button"><i class="fa-solid fa-play"></i></div>
+                            </div>
+                            <p class="video-quote">"Você merece mais. Por que se contentar com Correios, INSS e Banco do Brasil?"</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -145,13 +227,14 @@
                 <script>
                     checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
                 </script>
-                </div>
+            </div>
         </div>
     </section>
     
     <footer>
         <div class="container"><p>© 2025 DAQ Essencial. Todos os direitos reservados.</p><p style="margin-top: 10px;"><strong>Kyrlla Pattyelly</strong> – Auditora Fiscal • Criadora do SPQ</p></div>
     </footer>
+    
     <script id="hotmart-pixel" src="https://launcher.hotmart.com/launcher.js" async></script>
     <script>
         (function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
@@ -159,6 +242,48 @@
         e=a.getElementsByTagName(u)[0];h.async=1;h.src=n;e.parentNode.insertBefore(h,e)
         })(window,document,'script','//launcher.hotmart.com/launcher.js','hot');
         hot('account','724d6454-843f-36de-9666-c2bc235cd7be');
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelector('.tabs');
+            const tabButtons = tabs.querySelectorAll('.tab-button');
+            const tabPanels = document.querySelectorAll('.tab-panel');
+
+            tabs.addEventListener('click', function(e) {
+                if (e.target.matches('.tab-button')) {
+                    const targetTab = e.target.getAttribute('data-tab');
+
+                    tabButtons.forEach(button => button.classList.remove('active'));
+                    e.target.classList.add('active');
+
+                    tabPanels.forEach(panel => {
+                        if (panel.id === targetTab) {
+                            panel.classList.add('active');
+                        } else {
+                            panel.classList.remove('active');
+                        }
+                    });
+                }
+            });
+
+            document.querySelector('.tab-content').addEventListener('click', function(e) {
+                const facade = e.target.closest('.video-facade');
+                if (facade && !facade.querySelector('iframe')) {
+                    const youtubeId = facade.getAttribute('data-youtube-id');
+                    if (youtubeId && youtubeId.indexOf('ID_DO_VIDEO') === -1) {
+                        const iframe = document.createElement('iframe');
+                        iframe.setAttribute('src', `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`);
+                        iframe.setAttribute('frameborder', '0');
+                        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+                        iframe.setAttribute('allowfullscreen', '');
+                        
+                        facade.innerHTML = '';
+                        facade.appendChild(iframe);
+                    }
+                }
+            });
+        });
     </script>
 </body>
 </html>
