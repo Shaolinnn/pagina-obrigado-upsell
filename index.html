@@ -53,7 +53,27 @@
         .profile-text-content h2 { margin-bottom: 10px; text-align: left; } .profile-text-content p { margin: 0; text-align: left; }
         .highlight-v2 { background: var(--cor-fundo-claro); border: 1px solid #E5E7EB; border-left: 4px solid var(--cor-primaria); padding: 25px; text-align: left; border-radius: 12px; max-width: 750px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
         .highlight-v2 i { font-size: 1.5rem; color: var(--cor-primaria); }
-        .section-main-title { font-size: 3.5rem; font-weight: 800; color: var(--cor-dark-headline); margin-bottom: 30px; line-height: 1.2; }
+        .section-main-title { font-size: 3.5rem; font-weight: 800; color: var(--cor-dark-headline); margin-bottom: 15px; line-height: 1.2; }
+        
+        /* NOVO ESTILO: Badge de 1 Ano de Acesso */
+        .access-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background-color: rgba(46, 204, 113, 0.1);
+            border: 1px solid var(--cor-secundaria);
+            color: var(--cor-secundaria);
+            padding: 8px 25px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 15px rgba(46, 204, 113, 0.1);
+        }
+        .access-badge i { font-size: 1.1rem; }
+
         .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 60px; text-align: left; }
         .bento-item { background-color: var(--cor-dark-card); border: 1px solid #374151; padding: 30px; border-radius: 20px; }
         .bento-item.text-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
@@ -70,7 +90,7 @@
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         .video-proof-grid { display: grid; gap: 30px; }
         
-        /* MUDANÇA: Unificando os grids para 2 colunas */
+        /* GRID DE VÍDEOS UNIFICADO */
         .video-proof-grid.grid-2,
         .video-proof-grid.grid-3 {
             grid-template-columns: repeat(2, 1fr);
@@ -104,6 +124,7 @@
             .profile-text-content h2, .profile-text-content p { text-align: center; }
             .offer-card { padding: 30px 20px; max-width: 95%; }
             .tabs { flex-direction: column; gap: 15px; }
+            .access-badge { font-size: 0.9rem; padding: 6px 15px; }
         }
     </style>
 </head>
@@ -134,22 +155,27 @@
 
     <section class="dark-section">
         <div class="container">
-            <h2 class="section-main-title">MENTORIA SPQ</h2>
+            <h2 class="section-main-title">ACELERADOR SPQ - PROGRAMA DE IMPLEMENTAÇÃO</h2>
+            
+            <div class="access-badge">
+                <i class="fa-solid fa-calendar-days"></i> 1 Ano de Acesso
+            </div>
+
             <p class="subtitle">O Caminho Mais Rápido</p>
-            <h2>Acelere sua Aprovação com Acompanhamento Direto</h2>
-            <p>O método você já tem. Agora, imagine ter um plano de voo 100% personalizado e a minha orientação direta para garantir que cada minuto de estudo te deixe mais perto do seu nome no Diário Oficial.</p>
+            <h2>Acelere sua Aprovação com Direcionamento Estratégico</h2>
+            <p>O método você já tem. Agora, imagine ter um plano de voo 100% personalizado e um direcionamento estratégico para garantir que cada minuto de estudo te deixe mais perto do seu nome no Diário Oficial.</p>
             <div class="bento-grid">
                 <div class="bento-item"><div class="icon"><i class="fa-solid fa-map-location-dot"></i></div><h3>Clareza Absoluta</h3><p>Receba um plano de estudos lapidado para o seu ritmo e nunca mais se pergunte se está estudando certo.</p></div>
                 <div class="bento-item"><div class="icon"><i class="fa-solid fa-brain"></i></div><h3>Reprogramação Mental</h3><p>Mude a forma como seu cérebro responde à prova, controlando a ansiedade e aumentando o foco.</p></div>
-                <div class="bento-item col-span-2 text-center"><div class="icon"><i class="fa-solid fa-user-check"></i></div><h3>Acesso Direto à Minha Orientação</h3><p>Não são dicas genéricas. É sobre caminhar comigo, passo a passo, com suporte contínuo para você nunca mais travar ou se sentir sozinho na jornada.</p></div>
+                <div class="bento-item col-span-2 text-center"><div class="icon"><i class="fa-solid fa-user-check"></i></div><h3>Direcionamento Estratégico</h3><p>Não são dicas genéricas. É sobre ter acesso às ferramentas de aceleração, passo a passo, com suporte contínuo para você nunca mais travar ou se sentir sozinho na jornada.</p></div>
             </div>
         </div>
     </section>
 
     <section class="video-proof-section">
         <div class="container">
-            <p class="subtitle">A Mentoria por Dentro</p>
-            <h2>Isto é o Que Acontece na Mentoria SPQ</h2>
+            <p class="subtitle">O Acelerador por Dentro</p>
+            <h2>Isto é o Que Acontece no Acelerador SPQ</h2>
             <p style="margin-bottom: 40px;">Selecionamos trechos reais de sessões para você ver como a Kyrlla identifica travas e constrói atalhos para a aprovação. <strong>Escolha o perfil que mais se parece com você:</strong></p>
 
             <div class="tabs">
