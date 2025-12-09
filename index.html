@@ -37,25 +37,28 @@
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo); color: var(--cor-texto); line-height: 1.7; -webkit-font-smoothing: antialiased; }
-        .container { max-width: 950px; margin: 0 auto; padding: 0 20px; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
         section { padding: 100px 0; text-align: center; }
         h1, h2, h3 { font-weight: 700; line-height: 1.3; }
         h1 { font-size: 3rem; font-weight: 800; } h2 { font-size: 2.6rem; font-weight: 800; margin-bottom: 20px; }
         p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
         .subtitle { font-size: 1rem; font-weight: 600; color: var(--cor-primaria); margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1.5px; }
+        
+        /* SEÇÃO ESCURA */
         .dark-section { background-color: var(--cor-dark-fundo); }
         .dark-section h2, .dark-section h3 { color: var(--cor-dark-headline); } .dark-section p { color: var(--cor-dark-texto); }
+        
         .header { background: linear-gradient(45deg, var(--cor-secundaria), var(--cor-secundaria-hover)); color: white; padding: 4rem 0; text-align: center; }
         .header h1 { color: white; display: flex; align-items: center; justify-content: center; gap: 15px; text-align: center; }
         .header i { font-size: 2.5rem; }
-        .profile-presentation { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; max-width: 750px; width: 100%; text-align: left; }
+        .profile-presentation { display: flex; align-items: center; gap: 30px; margin-bottom: 40px; max-width: 750px; width: 100%; margin-left: auto; margin-right: auto; text-align: left; }
         .profile-photo { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--cor-secundaria); box-shadow: 0 5px 15px rgba(0,0,0,0.1); flex-shrink: 0; }
         .profile-text-content h2 { margin-bottom: 10px; text-align: left; } .profile-text-content p { margin: 0; text-align: left; }
         .highlight-v2 { background: var(--cor-fundo-claro); border: 1px solid #E5E7EB; border-left: 4px solid var(--cor-primaria); padding: 25px; text-align: left; border-radius: 12px; max-width: 750px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.05); display: flex; align-items: center; gap: 20px; }
         .highlight-v2 i { font-size: 1.5rem; color: var(--cor-primaria); }
         .section-main-title { font-size: 3.5rem; font-weight: 800; color: var(--cor-dark-headline); margin-bottom: 15px; line-height: 1.2; }
         
-        /* NOVO ESTILO: Badge de 1 Ano de Acesso */
+        /* Badge de 1 Ano de Acesso */
         .access-badge {
             display: inline-flex;
             align-items: center;
@@ -74,13 +77,23 @@
         }
         .access-badge i { font-size: 1.1rem; }
 
+        /* BENTO GRID (Seção Escura) */
         .bento-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 25px; margin-top: 60px; text-align: left; }
         .bento-item { background-color: var(--cor-dark-card); border: 1px solid #374151; padding: 30px; border-radius: 20px; }
         .bento-item.text-center { display: flex; flex-direction: column; align-items: center; text-align: center; }
         .bento-item .icon { font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 15px; } .bento-item.col-span-2 { grid-column: span 2; }
         
-        /* ESTILOS DA SEÇÃO DE PROVA SOCIAL (VÍDEOS COM ABAS) */
-        .video-proof-section { background-color: var(--cor-fundo-claro); }
+        /* SEÇÃO DE ENTREGÁVEIS (Lista de 9 Itens) */
+        .deliverables-section { background-color: var(--cor-fundo-claro); }
+        .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 25px; margin-top: 50px; text-align: left; }
+        .feature-item { background-color: white; border: 1px solid #E5E7EB; padding: 30px; border-radius: 16px; transition: transform 0.3s ease; box-shadow: 0 4px 20px rgba(0,0,0,0.03); }
+        .feature-item:hover { transform: translateY(-5px); border-color: var(--cor-primaria); box-shadow: 0 10px 30px rgba(0,0,0,0.08); }
+        .feature-item h3 { font-size: 1.2rem; margin-bottom: 10px; color: var(--cor-headline); font-weight: 700; }
+        .feature-item p { font-size: 0.95rem; color: #4B5563; line-height: 1.6; }
+        .feature-item .icon { font-size: 1.8rem; color: var(--cor-primaria); margin-bottom: 15px; }
+
+        /* SEÇÃO DE VÍDEOS (Nova) */
+        .video-section { background-color: white; border-top: 1px solid #F3F4F6; }
         .tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 50px; flex-wrap: wrap; }
         .tab-button { padding: 12px 25px; border: 2px solid #E5E7EB; background-color: white; border-radius: 100px; font-family: 'Poppins', sans-serif; font-size: 1rem; font-weight: 600; color: var(--cor-texto); cursor: pointer; transition: all 0.3s ease; }
         .tab-button:hover { background-color: #F3F4F6; border-color: #D1D5DB; }
@@ -88,15 +101,11 @@
         .tab-panel { display: none; }
         .tab-panel.active { display: block; animation: fadeIn 0.5s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .video-proof-grid { display: grid; gap: 30px; }
         
-        /* GRID DE VÍDEOS UNIFICADO */
-        .video-proof-grid.grid-2,
-        .video-proof-grid.grid-3 {
-            grid-template-columns: repeat(2, 1fr);
-        }
+        .video-proof-grid { display: grid; gap: 30px; }
+        .video-proof-grid.grid-2, .video-proof-grid.grid-3 { grid-template-columns: repeat(2, 1fr); }
 
-        .video-card { background-color: white; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.07); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .video-card { background-color: white; border-radius: 16px; box-shadow: 0 8px 20px rgba(0,0,0,0.07); overflow: hidden; transition: transform 0.3s ease, box-shadow 0.3s ease; border: 1px solid #F3F4F6; }
         .video-card:hover { transform: translateY(-8px); box-shadow: 0 12px 30px rgba(0,0,0,0.1); }
         .video-facade { position: relative; cursor: pointer; aspect-ratio: 16 / 9; background-size: cover; background-position: center; }
         .video-facade::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.2); transition: background 0.3s ease; }
@@ -111,6 +120,7 @@
         footer { background-color: var(--cor-dark-fundo); color: #9CA3AF; padding: 40px 0; text-align: center; }
         
         @media (max-width: 900px) {
+            .features-grid { grid-template-columns: 1fr; }
             .video-proof-grid.grid-2, .video-proof-grid.grid-3 { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
@@ -172,11 +182,66 @@
         </div>
     </section>
 
-    <section class="video-proof-section">
+    <section class="deliverables-section">
         <div class="container">
             <p class="subtitle">O Acelerador por Dentro</p>
             <h2>Isto é o Que Acontece no Acelerador SPQ</h2>
-            <p style="margin-bottom: 40px;">Selecionamos trechos reais de sessões para você ver como a Kyrlla identifica travas e constrói atalhos para a aprovação. <strong>Escolha o perfil que mais se parece com você:</strong></p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-video"></i></div>
+                    <h3>Encontros Quinzenais</h3>
+                    <p>Mapas práticos para guiar seus próximos 15 dias, com ajustes de rota e clareza imediata (ao vivo).</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-flag-checkered"></i></div>
+                    <h3>Missão SPQ de 15 Dias</h3>
+                    <p>Um plano simples, objetivo e dividido por níveis (Explorador, Aprendiz e Destruidor).</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-clipboard-check"></i></div>
+                    <h3>Diagnóstico Contínuo</h3>
+                    <p>Você entende onde está, para onde vai e qual o próximo passo exato para acelerar.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-layer-group"></i></div>
+                    <h3>Biblioteca Gravada</h3>
+                    <p>Acesso às aulas com temas centrais, desbloqueios emocionais e orientações de performance.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-users"></i></div>
+                    <h3>Comunidade SPQ</h3>
+                    <p>Grupo ativo e exclusivo para dúvidas rápidas, suporte entre alunos e acompanhamento do ritmo do ciclo.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-bolt"></i></div>
+                    <h3>Microativadores</h3>
+                    <p>Áudios semanais curtos, provocações e lembretes estratégicos para manter você em movimento.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Painel de Progresso</h3>
+                    <p>Acompanhamento visual da sua evolução, metas e vitórias no processo.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-toolbox"></i></div>
+                    <h3>Ferramentas SPQ</h3>
+                    <p>Templates e mapas prontos para organizar seus estudos, reduzir ruído e aumentar precisão.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="icon"><i class="fa-solid fa-brain"></i></div>
+                    <h3>Ritual de Reprogramação</h3>
+                    <p>Exercícios curtos para trabalhar ansiedade, autocobrança e foco durante o estudo.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <p class="subtitle">Resultados Reais</p>
+            <h2>Veja a Estratégia em Ação</h2>
+            <p style="margin-bottom: 40px;">Selecionamos trechos reais de sessões para você ver como a Kyrlla identifica travas e constrói atalhos. <strong>Escolha o perfil que mais se parece com você:</strong></p>
 
             <div class="tabs">
                 <button class="tab-button active" data-tab="tab-1">Estou Começando e Desconfiado</button>
