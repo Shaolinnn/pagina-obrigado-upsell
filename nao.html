@@ -3,49 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sua Compra foi Concluída!</title>
+    <title>Sua Compra foi Concluída! | Kyrlla Pattyelly</title>
+    
     <link rel="icon" type="image/x-icon" href="image/favicon.ico">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'], display: ['Montserrat', 'sans-serif'] },
+                    colors: {
+                        spq: { orange: '#ea580c', dark: '#09090b', card: '#18181b', text: '#d4d4d8' },
+                        blue: '#3b82f6',
+                        danger: '#ef4444', // Vermelho para item cancelado
+                        success: '#16a34a' // Verde para itens confirmados
+                    }
+                }
+            }
+        }
+    </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-583505601"></script>
+    <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-subids async></script>
+    <script async src="https://t.contentsquare.net/uxa/8b9c231da4716.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0YYSYX9YH"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'AW-583505601');
+        gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'granted' });
+        gtag('config', 'G-D0YYSYX9YH', { transport_type: 'beacon', anonymize_ip: true, allow_ad_personalization_signals: false, allow_google_signals: false, debug_mode: true });
+        gtag('config', 'AW-583505601', { transport_type: 'beacon' });
     </script>
     <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '575682733921732');
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '575682733921732'); 
         fbq('track', 'PageView');
     </script>
-
-    <style>
-        :root { --cor-dark-fundo: #111827; --cor-dark-texto: #E5E7EB; --cor-dark-headline: #FFFFFF; }
-        body { font-family: 'Poppins', sans-serif; background-color: var(--cor-dark-fundo); color: var(--cor-dark-texto); display: flex; justify-content: center; align-items: center; min-height: 100vh; text-align: center; padding: 20px; }
-        .card { max-width: 600px; }
-        .icon-confirm { font-size: 4rem; color: #4B5563; margin-bottom: 20px; }
-        h1 { color: var(--cor-dark-headline); font-size: 2.2rem; margin-bottom: 15px; }
-        p { font-size: 1.1rem; line-height: 1.7; }
-    </style>
 </head>
-<body>
-    <div class="card">
-        <i class="fa-solid fa-circle-check icon-confirm"></i>
-        <h1>Tudo certo!</h1>
-        <p>Obrigado pela confiança. Seu acesso ao <strong>DAQ Essencial</strong> foi enviado para o seu e-mail.</p>
-        <p style="margin-top: 15px;">Lembre-se de verificar sua caixa de entrada e também a de spam para não perder nada.</p>
-    </div>
+<body class="bg-spq-dark text-spq-text flex flex-col min-h-screen">
+
+    <header class="py-6 text-center border-b border-zinc-800">
+        <h1 class="font-display text-2xl font-bold text-white tracking-widest uppercase">Kyrlla Pattyelly</h1>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center p-4">
+        <div class="max-w-xl w-full bg-spq-card border border-zinc-700 rounded-3xl p-8 md:p-12 text-center shadow-2xl">
+            
+            <div class="mb-6 inline-flex items-center justify-center w-16 h-16 bg-success/20 rounded-full text-success text-3xl">
+                ✔
+            </div>
+
+            <h2 class="font-display text-2xl md:text-3xl text-white font-bold mb-4">
+                Tudo certo!
+            </h2>
+            
+            <div class="bg-zinc-900/50 p-4 rounded-lg border border-zinc-700 mb-8">
+                <p class="text-zinc-300 text-sm leading-relaxed mb-3">
+                    Obrigado pela confiança. Seu acesso ao <strong>DAQ Essencial</strong> foi enviado para o seu e-mail.
+                </p>
+                <p class="text-white text-sm font-semibold">
+                    Lembre-se de verificar sua caixa de entrada e também a de spam para não perder nada.
+                </p>
+            </div>
+
+            <div class="bg-zinc-900 rounded-xl p-6 mb-8 text-left border border-zinc-800">
+                <p class="text-xs font-bold text-zinc-500 uppercase tracking-wide mb-4">Status da sua conta:</p>
+                
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3 text-white bg-zinc-900/50 p-3 rounded-lg border border-success shadow-[0_0_10px_rgba(22,197,94,0.15)]">
+                        <span class="text-success text-xl">✔</span>
+                        <span class="font-bold">DAQ Essencial</span>
+                        <span class="ml-auto text-[10px] bg-success text-white px-3 py-1.5 rounded font-bold uppercase tracking-wider">CONFIRMADO</span>
+                    </li>
+                    
+                    <li class="flex items-center gap-3 text-zinc-500 bg-zinc-950 p-3 rounded-lg border border-danger/20 opacity-70 grayscale-[0.5]">
+                        <span class="text-danger font-bold text-lg">✕</span>
+                        <span class="font-medium line-through decoration-danger/50">Acelerador SPQ</span>
+                        <span class="ml-auto text-[10px] border border-danger text-danger px-2 py-1 rounded font-bold uppercase">NÃO ADQUIRIDO</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="space-y-3">
+                <p class="text-xs text-zinc-500">
+                    Seus dados de acesso foram enviados para o seu e-mail cadastrado.
+                </p>
+            </div>
+
+        </div>
+    </main>
+    
     <script id="hotmart-pixel" src="https://launcher.hotmart.com/launcher.js" async></script>
     <script>
         (function(l,a,u,n,c,h,e,r){l['HotmartLauncherObject']=c;l[c]=l[c]||function(){
