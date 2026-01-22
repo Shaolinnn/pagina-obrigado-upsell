@@ -18,12 +18,22 @@
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
+        
+        // Configuração Global GA4
         gtag('config', 'G-D0YYSYX9YH', {
             transport_type: 'beacon',
             anonymize_ip: true,
             linker: { domains: ["destruindoasquestoes.com.br", "hotmart.com"] }
         });
+        
+        // Configuração Global Google Ads
         gtag('config', 'AW-583505601', { transport_type: 'beacon' });
+    </script>
+    <script>
+      gtag('event', 'conversion', {
+          'send_to': 'AW-583505601/VgAvCOn24vYZEMGtnpYC', 
+          'transaction_id': ''
+      });
     </script>
 
     <script>
@@ -360,9 +370,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // ==============================================================
-            // CONFIGURAÇÃO DO DELAY: 104 Segundos (1 min e 44 seg)
+            // CONFIGURAÇÃO DO DELAY: 0 Segundos (TESTE A/B KYRLLA)
             // ==============================================================
-            const DELAY_SECONDS = 95; 
+            const DELAY_SECONDS = 0; 
 
             const hiddenContent = document.getElementById('offer-content');
             
@@ -374,7 +384,7 @@
                 console.log("Conteúdo desbloqueado via cache");
                 hiddenContent.style.display = 'block';
             } else if (DELAY_SECONDS === 0) {
-                // Modo Debug (0s)
+                // Modo Debug / Teste A/B (0s)
                 hiddenContent.style.display = 'block';
             } else {
                 console.log("Timer iniciado: " + DELAY_SECONDS + " segundos");
